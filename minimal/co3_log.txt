@@ -1,0 +1,67 @@
+==================================================
+round 1
+device input: {0: 0x10, 1: 0x09}
+decoded trace:
+  MEM_R    input[0] = 0x10 (16)    raw=(1, 0, 16)
+  MEM_R    input[1] = 0x09 (9)    raw=(1, 1, 9)
+  CALL     check_addr(param0 <- input[0])    raw=(4, 1, 0)
+  RET      check_addr -> false    raw=(5, 1, 0)
+  BRANCH   BRANCH_ADDR -> false    raw=(3, 1, 0)
+symbolic inputs:
+  input_0: concrete=0x10, z3=input_0
+  input_1: concrete=0x09, z3=input_1
+call bindings:
+  check_addr.param0 <- input_0, return=false
+branches:
+  BRANCH_ADDR: false
+constraints added to Z3:
+  flip BRANCH_ADDR: false -> true: input_0 == 90
+solver.sexpr():
+(declare-fun input_0 () (_ BitVec 8))
+(assert (= input_0 #x5a))
+
+solver.check(): sat
+model:
+  input_0 = 90
+current input: {0: 0x10, 1: 0x09}
+next input:    {0: 0x5a, 1: 0x09}
+==================================================
+round 2
+device input: {0: 0x5a, 1: 0x09}
+decoded trace:
+  MEM_R    input[0] = 0x5a (90)    raw=(1, 0, 90)
+  MEM_R    input[1] = 0x09 (9)    raw=(1, 1, 9)
+  CALL     check_addr(param0 <- input[0])    raw=(4, 1, 0)
+  RET      check_addr -> true    raw=(5, 1, 1)
+  BRANCH   BRANCH_ADDR -> true    raw=(3, 1, 1)
+  CALL     check_length(param0 <- input[1])    raw=(4, 2, 1)
+  RET      check_length -> false    raw=(5, 2, 0)
+  BRANCH   BRANCH_LEN -> false    raw=(3, 2, 0)
+symbolic inputs:
+  input_0: concrete=0x5a, z3=input_0
+  input_1: concrete=0x09, z3=input_1
+call bindings:
+  check_addr.param0 <- input_0, return=true
+  check_length.param0 <- input_1, return=false
+branches:
+  BRANCH_ADDR: true
+  BRANCH_LEN: false
+constraints added to Z3:
+  keep BRANCH_ADDR=true: input_0 == 90
+  flip BRANCH_LEN: false -> true: And(UGE(input_1, 1), ULE(input_1, 4))
+solver.sexpr():
+(declare-fun input_0 () (_ BitVec 8))
+(declare-fun input_1 () (_ BitVec 8))
+(assert (= input_0 #x5a))
+(assert (and (bvuge input_1 #x01) (bvule input_1 #x04)))
+
+solver.check(): sat
+model:
+  input_1 = 4
+  input_0 = 90
+current input: {0: 0x5a, 1: 0x09}
+next input:    {0: 0x5a, 1: 0x04}
+==================================================
+round 3
+device input: {0: 0x5a, 1: 0x04}
+device reached BUG path

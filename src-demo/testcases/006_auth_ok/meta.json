@@ -1,0 +1,14 @@
+{
+  "id": "006_auth_ok",
+  "description": "Valid AUTH packet.",
+  "protocol": "miniiot",
+  "expect": {
+    "handler": "AUTH",
+    "bug": null,
+    "ret": 0
+  },
+  "tags": [
+    "auth",
+    "valid"
+  ]
+}

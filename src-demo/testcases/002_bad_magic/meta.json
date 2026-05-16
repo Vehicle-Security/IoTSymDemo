@@ -1,0 +1,14 @@
+{
+  "id": "002_bad_magic",
+  "description": "Packet has incorrect magic bytes.",
+  "protocol": "miniiot",
+  "expect": {
+    "handler": null,
+    "bug": null,
+    "ret": -2
+  },
+  "tags": [
+    "magic",
+    "reject"
+  ]
+}

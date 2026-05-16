@@ -1,0 +1,14 @@
+{
+  "id": "003_bad_version",
+  "description": "Packet has valid magic but unsupported version.",
+  "protocol": "miniiot",
+  "expect": {
+    "handler": null,
+    "bug": null,
+    "ret": -3
+  },
+  "tags": [
+    "version",
+    "reject"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "009_write_config_oob",
+  "description": "WRITE_CONFIG packet with index 16 triggers OOB config write.",
+  "protocol": "miniiot",
+  "expect": {
+    "handler": "WRITE_CONFIG",
+    "bug": "OOB_CONFIG_WRITE",
+    "ret": -100
+  },
+  "tags": [
+    "write_config",
+    "oob",
+    "bug"
+  ]
+}

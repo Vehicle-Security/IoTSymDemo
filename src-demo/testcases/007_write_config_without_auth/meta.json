@@ -1,0 +1,15 @@
+{
+  "id": "007_write_config_without_auth",
+  "description": "WRITE_CONFIG packet rejected because context is not authenticated.",
+  "protocol": "miniiot",
+  "expect": {
+    "handler": "WRITE_CONFIG",
+    "bug": null,
+    "ret": -20
+  },
+  "tags": [
+    "write_config",
+    "auth",
+    "reject"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "001_short_input",
+  "description": "Input length is shorter than minimum packet size.",
+  "protocol": "miniiot",
+  "expect": {
+    "handler": null,
+    "bug": null,
+    "ret": -1
+  },
+  "tags": [
+    "length",
+    "reject"
+  ]
+}

@@ -1,0 +1,30 @@
+# macOS / editor
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# C build outputs
+*.o
+*.a
+*.so
+*.dylib
+*.elf
+*.bin.tmp
+*.dSYM/
+
+# Demo generated outputs
+src-demo/out/
+src-demo/traces/
+
+# Logs
+*.log

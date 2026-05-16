@@ -1,0 +1,14 @@
+{
+  "id": "004_bad_checksum",
+  "description": "Packet has bad header or payload checksum.",
+  "protocol": "miniiot",
+  "expect": {
+    "handler": null,
+    "bug": null,
+    "ret": -5
+  },
+  "tags": [
+    "checksum",
+    "reject"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "005_hello_ok",
+  "description": "Valid HELLO packet.",
+  "protocol": "miniiot",
+  "expect": {
+    "handler": "HELLO",
+    "bug": null,
+    "ret": 0
+  },
+  "tags": [
+    "hello",
+    "valid"
+  ]
+}

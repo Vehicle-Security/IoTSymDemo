@@ -1,0 +1,14 @@
+{
+  "id": "008_write_config_ok",
+  "description": "WRITE_CONFIG packet with a valid index.",
+  "protocol": "miniiot",
+  "expect": {
+    "handler": "WRITE_CONFIG",
+    "bug": null,
+    "ret": 0
+  },
+  "tags": [
+    "write_config",
+    "valid"
+  ]
+}
