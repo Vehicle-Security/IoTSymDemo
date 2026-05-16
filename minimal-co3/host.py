@@ -15,6 +15,10 @@ def build_formula_from_extracted_svfg(branch_id, sym_vars, call_args):
     input_idx = call_args[func_id]
     svfg = common.EXTRACTED_SVFG[func_id]
     op = svfg[0]
+    common.log(
+        f"SVFG bind: {common.branch_name(branch_id)} uses "
+        f"{common.call_name(func_id)}.param0 <- input_{input_idx}"
+    )
 
     if op == "eq_const":
         _, _param, const = svfg

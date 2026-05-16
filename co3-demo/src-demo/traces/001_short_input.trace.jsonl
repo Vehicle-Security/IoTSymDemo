@@ -1,0 +1,3 @@
+{"event":"symbolic_range","addr":6133868728,"len":3}
+{"event":"branch","taken":false,"lhs":3,"rhs":9,"op":">="}
+{"event":"result","ret":-1}

@@ -1,0 +1,9 @@
+{"event":"symbolic_range","addr":6162458808,"len":9}
+{"event":"branch","taken":true,"lhs":9,"rhs":9,"op":">="}
+{"event":"load","addr":6162458811,"value":1}
+{"event":"load","addr":6162458812,"value":0}
+{"event":"load","addr":6162458813,"value":1}
+{"event":"load","addr":6162458814,"value":0}
+{"event":"load","addr":6162458808,"value":0}
+{"event":"branch","taken":false,"lhs":0,"rhs":165,"op":"=="}
+{"event":"result","ret":-2}

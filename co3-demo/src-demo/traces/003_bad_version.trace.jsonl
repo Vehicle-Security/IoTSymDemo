@@ -1,0 +1,13 @@
+{"event":"symbolic_range","addr":6123940024,"len":9}
+{"event":"branch","taken":true,"lhs":9,"rhs":9,"op":">="}
+{"event":"load","addr":6123940027,"value":1}
+{"event":"load","addr":6123940028,"value":0}
+{"event":"load","addr":6123940029,"value":1}
+{"event":"load","addr":6123940030,"value":0}
+{"event":"load","addr":6123940024,"value":165}
+{"event":"branch","taken":true,"lhs":165,"rhs":165,"op":"=="}
+{"event":"load","addr":6123940025,"value":90}
+{"event":"branch","taken":true,"lhs":90,"rhs":90,"op":"=="}
+{"event":"load","addr":6123940026,"value":2}
+{"event":"branch","taken":false,"lhs":2,"rhs":1,"op":"=="}
+{"event":"result","ret":-3}

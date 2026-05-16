@@ -15,6 +15,7 @@ call bindings:
 branches:
   BRANCH_ADDR: false
 constraints added to Z3:
+SVFG bind: BRANCH_ADDR uses check_addr.param0 <- input_0
   flip BRANCH_ADDR: false -> true: input_0 == 90
 solver.sexpr():
 (declare-fun input_0 () (_ BitVec 8))
@@ -47,7 +48,9 @@ branches:
   BRANCH_ADDR: true
   BRANCH_LEN: false
 constraints added to Z3:
+SVFG bind: BRANCH_ADDR uses check_addr.param0 <- input_0
   keep BRANCH_ADDR=true: input_0 == 90
+SVFG bind: BRANCH_LEN uses check_length.param0 <- input_1
   flip BRANCH_LEN: false -> true: And(UGE(input_1, 1), ULE(input_1, 4))
 solver.sexpr():
 (declare-fun input_0 () (_ BitVec 8))
