@@ -118,14 +118,6 @@ demo/
         └── solution.json                # 求解结果
 ```
 
-## 与 tips.md 要求的对应关系
-
-| 要求 | 实现 |
-|------|------|
-| LLM + CodeQL 替代污点分析 | `analysis.json` 作为 LLM+CodeQL 输出契约 |
-| LLM 源码插桩 | `instrument.py` 生成 C 源码追踪钩子 |
-| SymCC 风格符号分析 | `solve.py` 基于 trace 的 Z3 约束求解 |
-
 ## v1 局限
 
 - `analysis.json` 中的数据（trace_vars、context_mechanism、bug_trigger）是手写的，模拟 LLM 分析 CodeQL 事实后的输出。生产环境中这一步由 LLM 完成。
